@@ -73,23 +73,26 @@ export function FormArtworkArtistProvider({ children }) {
   };
   const handleInputChangeType = (event) => {
     const { value } = event.target;
+    const newValue = value.replace(/'/g, "");
     setFormType((prevFormType) => ({
       ...prevFormType,
-      name: value,
+      name: newValue,
     }));
   };
   const handleInputChangeArtTrend = (event) => {
     const { value } = event.target;
+    const newValue = value.replace(/'/g, "");
     setFormArtTrend((prevFormArtTrend) => ({
       ...prevFormArtTrend,
-      name: value,
+      name: newValue,
     }));
   };
   const handleInputChangeTechnique = (event) => {
     const { value } = event.target;
+    const newValue = value.replace(/'/g, "");
     setFormTechnique((prevFormTechnique) => ({
       ...prevFormTechnique,
-      name: value,
+      name: newValue,
     }));
   };
   const [artworkPicture, setArtworkPicture] = useState(null);
@@ -127,9 +130,10 @@ export function FormArtworkArtistProvider({ children }) {
         [name]: numericValue,
       }));
     } else {
+      const newValue = value.replace(/'/g, "");
       setFormArtwork((prevFormArtwork) => ({
         ...prevFormArtwork,
-        [name]: value,
+        [name]: newValue,
       }));
     }
   };
@@ -154,10 +158,10 @@ export function FormArtworkArtistProvider({ children }) {
   };
   const handleInputChangeArtist = (event) => {
     const { name, value } = event.target;
-
+    const newValue = value.replace(/'/g, "");
     setFormArtist((prevFormArtist) => ({
       ...prevFormArtist,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
